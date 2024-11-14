@@ -1,15 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from datetime import datetime
+from . import models
 
 def main_page(request):
     if request.method == 'GET':
-        return HttpResponse("""
-                            <h1>Это главное меню:</h1>
-                            <a href='about_me/'>about_me</a><br/>
-                            <a href = 'about_cars/'>about_cars</a><br/>
-                            <a href = 'system_time/'>system_time</a><br/>
-                            """)
+        return HttpResponse("<h1> THIS IS MAIN PAGE </h1>")
 
 def about_me_response(request):
     if request.method == 'GET':
@@ -33,3 +29,14 @@ def system_time(request):
         return HttpResponse(f"""
                             <h1>{datetime.now()}</h1>
                             """)
+
+
+def book_list(request):
+    books = models.Books.objects.all()
+    if request.method == 'GET':
+        return render(request, 'book.html', context = {'books':books})
+
+def book_detail(request, book_id):
+    books_detail = get_object_or_404(models.Books, id=book_id)
+    if request.method == 'GET':
+        return render(request, 'book_detail.html', context={'book': books_detail})
