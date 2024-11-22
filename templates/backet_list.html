@@ -1,0 +1,18 @@
+{% include 'header.html' %}
+
+    {% if orders %}
+
+        {% for item in orders %}
+    <div class="backet">
+        <p><strong>Имя заказчика: </strong>{{item.name}}</p><br>
+        <p><strong>Номер заказчика: </strong>{{item.phone_number}}</p><br>
+        <p><strong>Почтовый адрес заказчика: </strong>{{item.email}}</p><br>
+        <p></p><strong>Заказ: </strong>{{item.book}}</p><br>
+        <a href={% url 'backet_delete' item.id %}>Удалить</a>
+        <a href={% url 'backet_edit' item.id %}>Изменить</a>
+    </div>
+        {% endfor %}
+
+    {% endif %}
+
+{% include 'footer.html' %}

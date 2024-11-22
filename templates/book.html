@@ -7,7 +7,7 @@
          {% for item in books %}
         <div class="col-md-4 mb-4">
             <div class="card" style="width: 100%;">
-                <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Обложка книги">
+                <img src={{ item.book_photo }} class="card-img-top" alt="Обложка книги">
                 <div class="card-body">
                     <h5 class="card-title">{{item.book_name}}</h5>
                     <p class="card-text">{{item.book_release}}</p>

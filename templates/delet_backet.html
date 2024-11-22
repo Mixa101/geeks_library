@@ -1,0 +1,9 @@
+{% include 'header.html' %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Удалить</button>
+</form>
+
+{% include 'footer.html' %}

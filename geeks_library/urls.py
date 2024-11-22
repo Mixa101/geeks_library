@@ -7,12 +7,9 @@ from main_page import views, urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', TemplateView.as_view(template_name='add_comments.html')),
-    path('', views.main_page),
+    # path('test/', TemplateView.as_view(template_name='add_comments.html')),
     path('', include('main_page.urls')),
-    path('about_me/', views.about_me_response),
-    path('about_cars/', views.about_my_cars_response),
-    path('system_time/', views.system_time),
+    path('', include('backet.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

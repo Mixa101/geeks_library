@@ -12,11 +12,15 @@ class Books(models.Model):
     book_price = models.PositiveIntegerField(verbose_name="сколько стоит книга?")
     book_release = models.DateField(verbose_name="Дата выхода")
     book_genre = models.CharField(max_length=255, verbose_name="Жанр книги", choices=GENRE_CHOICES)
+    book_photo = models.ImageField(null=True)
     authors_email = models.EmailField(verbose_name="почта автора")
     authors_name = models.CharField(max_length=255, verbose_name="Имя автора")
     class Meta:
         verbose_name = 'Книга'
         verbose_name_plural = 'Книги'
+    
+    def __str__(self):
+        return self.book_name + " " + str(self.book_price)
         
 class Comment(models.Model):
     RATES = ((i, i) for i in range(0, 11))
