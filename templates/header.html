@@ -53,7 +53,10 @@
                     <a class="nav-link enable" href="#" style="color: yellow;">Регистрация</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link enable" href="#" style="color: yellow;">Другие книги</a>
+                    <a class="nav-link enable" href={% url 'litres_list' %} style="color: yellow;">Другие книги</a>
+                </li>                
+                <li class="nav-item">
+                    <a class="nav-link enable" href={% url 'create_data' %} style="color: yellow;">Начать Парсинг</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">

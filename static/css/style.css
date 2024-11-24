@@ -45,18 +45,64 @@ footer {
 }
 
 div.backet {
-    margin: 10px;
-    padding: 10px;
+    margin: 20px;
+    padding: 20px;
     background: #333;
     color: cyan;
     border-radius: 10px;
     line-height: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.buttons
+{
+    position: static;
+    overflow: hidden;
+    margin: auto;
+    padding: auto;
 }
 
-.backet a {
-    background: #000;
-    border: 1px solid purple;
-    color: aliceblue;
+.backet a
+{
+    position:relative;
+    background: rgba(45,45,45,1);
+    padding: 5px 10px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+a:hover
+{
+    color: var(--clr);
+    text-shadow: 0 0 15px var(--clr),
+    0 0 40px var(--clr);
+}
+
+a span
+{
+    position: relative;
+    z-index: 1;
+}
+
+.nav-link:hover
+{
+    color: #333 !important;
+}
+
+.litres_books
+{
+    background: #171716;
+    text-align: center;
+    padding: 5px;
     margin: 5px;
-    padding: 1px;
+    border: #333 5px solid;
+    border-radius: 30px;
+    color: #aaa;
+    flex: 1;
 }

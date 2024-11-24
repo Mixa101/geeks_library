@@ -1,0 +1,16 @@
+{% include 'header.html' %}
+
+
+
+    {% for item in litres %}
+    <div class="litres_books">
+    <p><strong>Название: </strong>{{item.name}}</p>
+    <p><strong>Автор: </strong>{{item.author}}</p>
+    <img src={{ item.img }} alt="">
+    <p><strong>Цена: </strong>{{item.price}}</p>
+</div>
+    {% endfor %}
+
+
+
+{% include 'footer.html' %}

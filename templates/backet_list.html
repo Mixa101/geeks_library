@@ -8,8 +8,8 @@
         <p><strong>Номер заказчика: </strong>{{item.phone_number}}</p><br>
         <p><strong>Почтовый адрес заказчика: </strong>{{item.email}}</p><br>
         <p></p><strong>Заказ: </strong>{{item.book}}</p><br>
-        <a href={% url 'backet_delete' item.id %}>Удалить</a>
-        <a href={% url 'backet_edit' item.id %}>Изменить</a>
+        <a href={% url 'backet_delete' item.id %} style="--clr:#0f0;"><span>Удалить</span></a>
+        <a href={% url 'backet_edit' item.id %} style="--clr:#0f0;"}><span>Изменить</span></a>
     </div>
         {% endfor %}
 

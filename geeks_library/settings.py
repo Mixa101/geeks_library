@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main_page',
     'backet',
+    'litres',
 ]
 
 MIDDLEWARE = [
