@@ -21,12 +21,15 @@ def parse():
 def create_data():
     data_list = parse()
     for item in data_list:
-        LitresModel.objects.create(
-            name=item.get('name'),
-            author=item.get('author'),
-            price=item.get('price'),
-            img=item.get('img'),
-        )
+        if not LitresModel.objects.filter(name=item.get('name')):
+            LitresModel.objects.create(
+                name=item.get('name'),
+                author=item.get('author'),
+                price=item.get('price'),
+                img=item.get('img'),
+            )
+        else:
+            print(f"[ LOG ] == '{item.get('name')}' is already exists!")
     
 
 
